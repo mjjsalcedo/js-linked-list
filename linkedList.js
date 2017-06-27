@@ -5,10 +5,13 @@
  */
 function linkedListGenerator(){
 
-  var list = null;
+  var list = {
+    value: null,
+    next: null,
+  };
 
   function getHead(){
-
+    return list.value;
   }
 
   function getTail(){
