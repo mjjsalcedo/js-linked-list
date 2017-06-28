@@ -51,34 +51,49 @@ function linkedListGenerator(){
   }
 
   function get(index){
-    let findNode = list;
-    for(let i = 0; i < index; i++) {
-      if(findNode.next === null)
-        return false;
-      findNode = findNode.next;
+    let currentNode = list;
+    let count = 0;
+
+    while(currentNode.next && count < index) {
+      currentNode = currentNode.next;
+      count++;
+    }
+    if(currentNode.next === null && count < index){
+      return false;
     }
 
-    return findNode;
+    return currentNode;
   }
+
 
   function remove(index){
-    let findNode = list;
+    let currentNode = list;
+    let count = 0;
+    let previousNode = currentNode;
 
-    let prevNode = null;
-
-    for(let i = 0; i < index; i++) {
-      if(findNode.next === null)
-        return false;
-      prevNode = findNode;
-      findNode = findNode.next;
+    if(index === 0){
+      list = currentNode.next;
     }
 
-      prevNode.next = findNode.next;
+    while(currentNode.next && count < index){
+      previousNode = currentNode;
+      currentNode = currentNode.next;
+      count++;
+    }
+
+    previousNode.next = currentNode.next;
+
+    if(currentNode.next === null && count < index){
+      return false;
+    }
+
   }
 
-  function insert(){
+  function insert(value, index){
 
   }
+
+
 
     return {
     getHead: getHead,
