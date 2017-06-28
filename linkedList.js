@@ -27,21 +27,39 @@ function linkedListGenerator(){
   }
 
   function add(value){
-    let newNode =
-    { value: value,
-      next: null };
+    let newNode = {
+      value : value,
+      next : null
+    };
 
-    if(list === null){
+    let currentNode = list;
+
+    if( list === null) {
       list = newNode;
-      return list;
-    } else {
-      list.next = newNode;
+      return newNode;
     }
+
+
+    while(currentNode.next) {
+      currentNode = currentNode.next;
+    }
+    currentNode.next = newNode;
+
+    return newNode;
+
 
   }
 
-  function get(){
-
+  function get(index){
+    let findNode = list;
+    console.log("this is ", findNode);
+    for(let i = 0; i < index; i++) {
+      if(findNode.next === null)
+        return false;
+      findNode = findNode.next;
+    }
+    console.log("this is node", findNode);
+    return findNode;
   }
 
   function remove(){
@@ -63,10 +81,3 @@ function linkedListGenerator(){
 
 }
 
-
-/*console.log(linkedListGenerator.getHead());
-console.log(linkedListGenerator.getHead());
-console.log(linkedListGenerator.getHead());
-console.log(linkedListGenerator.getHead());
-console.log(linkedListGenerator.getHead());
-console.log(linkedListGenerator.getHead());*/
