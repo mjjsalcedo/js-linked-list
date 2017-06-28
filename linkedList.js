@@ -1,3 +1,6 @@
+/*jshint esversion: 6 */
+
+
 /**
  * @name  linkedListGenerator
  * @description  Main Module
@@ -5,28 +8,19 @@
  */
 function linkedListGenerator(){
 
-  var list = {
-    value: null,
-    next: null,
-  };
+  let list = null;
 
   function getHead(){
-    return list.value;
+    return list;
   }
 
   function getTail(){
-    let currentNode = list;
-    while (currentNode.next  !== null){
-        // traverse the list
-        // set curNode to the next node, if it exists
-        currentNode = curNode.next;
+    if (list === null) {
+      return list;
     }
-
-    return currentNode.value;
-
   }
 
-  function add(){
+  function add(value){
 
   }
 
