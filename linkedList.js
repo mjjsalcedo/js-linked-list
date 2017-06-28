@@ -31,13 +31,13 @@ function linkedListGenerator(){
     { value: value,
       next: null };
 
-    let currentNode = list;
-
-    while(currentNode.next !== null){
-      currentNode = currentNode.next;
+    if(list === null){
+      list = newNode;
+      return list;
+    } else {
+      list.next = newNode;
     }
-    currentNode.next = newNode;
-    return newNode;
+
   }
 
   function get(){
