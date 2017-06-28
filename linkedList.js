@@ -52,18 +52,28 @@ function linkedListGenerator(){
 
   function get(index){
     let findNode = list;
-    console.log("this is ", findNode);
     for(let i = 0; i < index; i++) {
       if(findNode.next === null)
         return false;
       findNode = findNode.next;
     }
-    console.log("this is node", findNode);
+
     return findNode;
   }
 
-  function remove(){
+  function remove(index){
+    let findNode = list;
 
+    let prevNode = null;
+
+    for(let i = 0; i < index; i++) {
+      if(findNode.next === null)
+        return false;
+      prevNode = findNode;
+      findNode = findNode.next;
+    }
+
+      prevNode.next = findNode.next;
   }
 
   function insert(){
