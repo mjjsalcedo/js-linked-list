@@ -15,6 +15,14 @@ function linkedListGenerator(){
   }
 
   function getTail(){
+    let currentNode = list;
+    while (currentNode.next  !== null){
+        // traverse the list
+        // set curNode to the next node, if it exists
+        currentNode = curNode.next;
+    }
+
+    return currentNode.value;
 
   }
 
@@ -44,3 +52,11 @@ function linkedListGenerator(){
   };
 
 }
+
+
+/*console.log(linkedListGenerator.getHead());
+console.log(linkedListGenerator.getHead());
+console.log(linkedListGenerator.getHead());
+console.log(linkedListGenerator.getHead());
+console.log(linkedListGenerator.getHead());
+console.log(linkedListGenerator.getHead());*/
