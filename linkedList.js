@@ -8,20 +8,38 @@
  */
 function linkedListGenerator(){
 
-  let list = null;
+  let list = {
+    value: null,
+    next: null,
+  }
 
   function getHead(){
-    return list;
+    return list.value;
   }
 
   function getTail(){
-    if (list === null) {
-      return list;
+    let currentNode = list;
+
+    while(currentNode.next !== null){
+
+      currentNode = currentNode.next;
     }
+    return currentNode.value;
+
   }
 
   function add(value){
+    let newNode =
+    { value: value,
+      next: null };
 
+    let currentNode = list;
+
+    while(currentNode.next !== null){
+      currentNode = currentNode.next;
+    }
+    currentNode.next = newNode;
+    return newNode;
   }
 
   function get(){
