@@ -8,23 +8,21 @@
  */
 function linkedListGenerator(){
 
-  let list = {
-    value: null,
-    next: null,
-  }
+  let list = null;
 
   function getHead(){
-    return list.value;
+
+    return list;
   }
 
   function getTail(){
     let currentNode = list;
 
-    while(currentNode.next !== null){
+    while(currentNode !== null && currentNode.next !== null){
 
       currentNode = currentNode.next;
     }
-    return currentNode.value;
+    return currentNode;
 
   }
 
