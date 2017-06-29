@@ -90,10 +90,39 @@ function linkedListGenerator(){
   }
 
   function insert(value, index){
+    let currentNode = list;
+    let count = 0;
+    let previousNode = currentNode;
 
+    if(index === 0){
+      list = { value: value,
+               next: currentNode};
+        return list;
+    }
+
+    if(index < 0){
+      return false;
+    }
+
+  if(get(index) === false || index < 0) {
+    return false;
   }
 
+    while(currentNode.next && count < index){
+      previousNode = currentNode;
+      currentNode = currentNode.next;
+      count++;
+    }
 
+      previousNode.next = {
+                          value: value,
+                          next: currentNode,
+                        };
+
+    if(currentNode.next === null && count < index){
+      return false;
+    }
+  }
 
     return {
     getHead: getHead,
